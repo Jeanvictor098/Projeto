@@ -13,10 +13,8 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3  # Obtém o código do repositório
 
-      - name: Criar diretório de build e mover o index.html
-        run: |
-          mkdir -p public
-          cp index.html public/  # Certifique-se de que index.html está no diretório correto
+      - name: Criar diretório de build
+        run: mkdir public && cp index.html public/  # Move o index.html para um diretório público
 
       - name: Deploy no GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
